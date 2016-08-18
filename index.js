@@ -47,7 +47,8 @@ let rule = {
 
 
 function validate_single(_data, _rule){
-  for(let key in _data){
+  _data = _data || {}
+  for(let key in _rule){
     let current_rule = _rule[key]
     let rule_name
     let msg = current_rule['msg'] || '有字段未通过验证'
@@ -74,7 +75,9 @@ function validate(_data, _rule){
     _data = [_data]
   }
 
-  let result = true
+  let result = {
+    status: true
+  }
 
   _data.forEach((item)=> {
     let current = validate_single(item, _rule)
@@ -86,5 +89,6 @@ function validate(_data, _rule){
 
   return result
 }
+
 
 module.exports = validate
