@@ -10,7 +10,7 @@ npm install es-validate --save
 ## Usage
 ```bash
 let ESVal = require('es-validate')
-Validate.validate(data, rule)
+ESVal.validate(data, rule)
 ```
 
 

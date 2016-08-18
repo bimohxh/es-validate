@@ -1,13 +1,13 @@
 {
   "name": "es-validate",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/awesomes-cn/es-validate.git"
+    "url": "git+https://github.com/bimohxh/es-validate.git"
   },
   "author": "",
   "license": "ISC",
@@ -15,9 +15,9 @@
   "bin": {
   },
   "bugs": {
-    "url": "https://github.com/awesomes-cn/es-validate/issues"
+    "url": "https://github.com/bimohxh/es-validate/issues"
   },
-  "homepage": "https://github.com/awesomes-cn/es-validate#readme",
+  "homepage": "https://github.com/bimohxh/es-validate#readme",
   "dependencies": {
     
   }
