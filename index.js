@@ -49,16 +49,18 @@ let rule = {
 function validate_single(_data, _rule){
   _data = _data || {}
   for(let key in _rule){
-    let current_rule = _rule[key]
+    let current_rule = _rule[key] // {min: 12, msg: 'NO'}
     let rule_name
     let msg = current_rule['msg'] || '有字段未通过验证'
     
+    let rule_val
     for(let r in current_rule){
       if(rule[r]) {
         rule_name = rule[r]
+        rule_val = current_rule[r]
       }
     }
-    if(!rule_name(_data[key], msg)){
+    if(!rule_name(_data[key], rule_val)){
       return {
         status: false,
         msg: msg

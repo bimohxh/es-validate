@@ -12,13 +12,11 @@
   "author": "",
   "license": "ISC",
   "preferGlobal": true,
-  "bin": {
-  },
+  "bin": {},
   "bugs": {
     "url": "https://github.com/bimohxh/es-validate/issues"
   },
   "homepage": "https://github.com/bimohxh/es-validate#readme",
   "dependencies": {
-    
   }
 }
