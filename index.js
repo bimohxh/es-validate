@@ -56,13 +56,13 @@ var rule = {
 
 function validate_single(_data, _rule){
   _data = _data || {}
-  for(let key in _rule){
-    let current_rule = _rule[key] // {min: 12, msg: 'NO'}
-    let rule_name
-    let msg = current_rule['msg'] || '有字段未通过验证'
+  for(var key in _rule){
+    var current_rule = _rule[key] // {min: 12, msg: 'NO'}
+    var rule_name
+    var msg = current_rule['msg'] || '有字段未通过验证'
     
-    let rule_val
-    for(let r in current_rule){
+    var rule_val
+    for(var r in current_rule){
       if(rule[r]) {
         rule_name = rule[r]
         rule_val = current_rule[r]
@@ -85,12 +85,12 @@ function validate(_data, _rule){
     _data = [_data]
   }
 
-  let result = {
+  var result = {
     status: true
   }
 
   _data.forEach(function(item) {
-    let current = validate_single(item, _rule)
+    var current = validate_single(item, _rule)
     if(!current.status){
       result =  current
       return
