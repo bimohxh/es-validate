@@ -1,7 +1,7 @@
 var _ = require('underscore')
 
 
-let rule = {
+var rule = {
   required: (val)=> {
     if(_.isString(val) && val.trim() == '') return false
     return _.isNumber(val) || !_.isEmpty(val) 
