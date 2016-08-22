@@ -1,6 +1,4 @@
-"use strict"
-
-const _ = require('underscore')
+var _ = require('underscore')
 
 
 let rule = {
