@@ -2,7 +2,7 @@ var _ = require('underscore')
 
 
 var rule = {
-  required: (val)=> {
+  required: function(val) {
     if(_.isString(val) && val.trim() == '') return false
     return _.isNumber(val) || !_.isEmpty(val) 
   },
@@ -89,7 +89,7 @@ function validate(_data, _rule){
     status: true
   }
 
-  _data.forEach((item)=> {
+  _data.forEach(function(item) {
     let current = validate_single(item, _rule)
     if(!current.status){
       result =  current
