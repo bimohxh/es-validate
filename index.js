@@ -46,6 +46,12 @@ let rule = {
   },
   match: function(val, ruleVal) {
     return  ruleVal.test(val)
+  },
+  equalTo: function(val, ruleVal) {
+    return  val == ruleVal
+  },
+  notEqualTo: function(val, ruleVal) {
+    return  val != ruleVal
   }
 }
 

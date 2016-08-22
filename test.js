@@ -1,7 +1,7 @@
 var ESVal = require('./index.js')
 
 console.log(ESVal.validate({
-  age: {}
+  age: 1
 }, {
   age: {
     required: true
