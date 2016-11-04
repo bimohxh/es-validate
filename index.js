@@ -57,21 +57,21 @@ var rule = {
 function validate_single(_data, _rule){
   _data = _data || {}
   for(var key in _rule){
+    
     var current_rule = _rule[key] // {min: 12, msg: 'NO'}
-    var rule_name
     var msg = current_rule['msg'] || '有字段未通过验证'
     
-    var rule_val
     for(var r in current_rule){
+      console.log('==', r)
       if(rule[r]) {
-        rule_name = rule[r]
-        rule_val = current_rule[r]
-      }
-    }
-    if(!rule_name(_data[key], rule_val)){
-      return {
-        status: false,
-        msg: msg
+        var rule_name = rule[r]
+        var rule_val = current_rule[r]
+        if(!rule_name(_data[key], rule_val)){ 
+          return {
+            status: false,
+            msg: msg
+          }
+        }  
       }
     }
   }
