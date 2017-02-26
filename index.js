@@ -54,24 +54,25 @@ var rule = {
 }
 
 
-function validate_single(_data, _rule){
+function validate_single (_data, _rule) {
   _data = _data || {}
-  for(var key in _rule){
-    
+  for (var key in _rule) {
     var current_rule = _rule[key] // {min: 12, msg: 'NO'}
     var msg = current_rule['msg'] || '有字段未通过验证'
-    
-    for(var r in current_rule){
-      console.log('==', r)
-      if(rule[r]) {
+    for (var r in current_rule) {
+      if (rule[r]) {
         var rule_name = rule[r]
         var rule_val = current_rule[r]
-        if(!rule_name(_data[key], rule_val)){ 
+        let falseRule = r === 'required' ? !rule_name(_data[key], rule_val) : rule.required(_data[key], rule_val) && !rule_name(_data[key], rule_val)
+        if (falseRule) {
+          if (typeof msg === 'object') {
+            msg = msg[r] || '有字段w未通过验证'
+          }
           return {
             status: false,
             msg: msg
           }
-        }  
+        }
       }
     }
   }
