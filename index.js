@@ -63,8 +63,9 @@ function validate_single (_data, _rule) {
       if (rule[r]) {
         var rule_name = rule[r]
         var rule_val = current_rule[r]
-        let falseRule = r === 'required' ? !rule_name(_data[key], rule_val) : rule.required(_data[key], rule_val) && !rule_name(_data[key], rule_val)
-        if (falseRule) {
+        let falseRule1 = (r === 'required' && !rule_name(_data[key], rule_val))
+        let falseRule2 = (rule.required(_data[key], rule_val) && !rule_name(_data[key], rule_val))
+        if (falseRule1 || falseRule2) {
           if (typeof msg === 'object') {
             msg = msg[r] || '有字段w未通过验证'
           }
